@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حساب عدد الجمع منذ هدف مجدي أفشة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: red;
+        }
+        p {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>كم جمعة مرت منذ هدف مجدي أفشة على حساب الزمالك؟</h1>
+    <p id="timeSince">0 جمعة</p>
+
+    <script>
+        function calculateWeeks() {
+            var eventDate = new Date('2020-11-27T00:00:00'); // تاريخ هدف أفشة
+            var now = new Date();
+            var diff = now - eventDate; // فرق الزمن بين الآن وهدف أفشة
+
+            var weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7)); // حساب الأسابيع
+
+            document.getElementById("timeSince").innerHTML = weeks + " جمعة";
+        }
+
+        calculateWeeks(); // استدعاء الدالة لحساب عدد الجمع فوراً
+        setInterval(calculateWeeks, 1000); // تحديث العدد كل ثانية
+    </script>
+
+</body>
+</html>
